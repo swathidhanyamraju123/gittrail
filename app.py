@@ -1,4 +1,5 @@
 import streamlit as st
+import random
 from datetime import datetime
 
 st.set_page_config(
@@ -45,7 +46,8 @@ st.markdown(
     """,
 )
 
-col1, col2 = st.columns(2, gap="large")
+col1, col2, col3 = st.columns(3, gap="large")
+
 
 with col1:
     if st.button("Say Hello 👋", use_container_width=True):
@@ -55,6 +57,13 @@ with col2:
     if st.button("Show Time ⏰", use_container_width=True):
         now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         st.info(f"Current time is **{now}**")
+
+with col3:
+    if st.button("Show Quote 📜", use_container_width=True):
+        quotes = [...]
+        st.warning(random.choice(quotes))
+
+
 
 st.divider()
 st.markdown(
